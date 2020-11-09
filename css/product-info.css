@@ -1,0 +1,118 @@
+/*estilo de las estrellas*/
+input[type="radio"] {
+  display: none;
+}
+
+/* estilo estrella comentario form*/
+:root {
+  --color-inactivo: #5f5050;
+  --color-hover: #d61c6c;
+}
+.puntuacion {
+  display: flex;
+  float: left;
+  flex-direction: row-reverse;
+}
+.puntuacion input:checked ~ label {
+  color:#d61c6c;
+  }
+
+.puntuacion label {
+  background-color: initial;
+  border: 0;
+  color: var(--color-inactivo);
+  transition: 1s all;
+}
+.puntuacion label:hover {
+  cursor: pointer;
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+label:nth-child(1):hover ~ label {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+label:nth-child(2):hover ~ label {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+label:nth-child(3):hover ~ label {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+label:nth-child(4):hover ~ label {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+label:nth-child(5):hover ~ label {
+  color: var(--color-hover);
+  transform: rotate(360deg);
+}
+/*estilo de las imagenes / carousel */
+.images{
+  box-sizing: border-box;
+}
+
+.gallery{
+  justify-content: space-around;
+  display:flex;
+  width: 100%;
+  margin:auto;
+  list-style: none;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.gallery li{
+  margin: 5px;
+}
+
+.gallery img {
+  width: 150 px;
+  height: 100px;
+}
+
+#mainImage{
+    box-sizing: content-box;
+    margin:auto;
+    height: 100%;
+    padding: 20px;
+    float: right;
+    
+}
+/*estilo comentarios formulario*/
+input {
+	background-color: #ffffff;
+	padding: 12px 15px;
+	margin: 1px 0;
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 24px;
+} 
+.card:hover{
+  box-shadow: 2px 2px 10px lightgray;
+}
+.btn-primary {
+  background-color: #d61c6c;
+  border-color: #d61c6c;
+}
+.btn-primary:hover {
+ background-color: hsl(334, 81%, 24%); 
+border-color: white;
+}
+/*estilo links y titulos*/
+a {
+  color: #d61c6c;
+}
+a:hover {
+  color: hsl(334, 81%, 24%);
+}
+dt {
+ color:#d61c6c;
+}
+
+.card-deck {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}

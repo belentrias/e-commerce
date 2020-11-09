@@ -1,0 +1,96 @@
+
+.row-content {
+margin-bottom: 2px;
+padding: 5px 0 5px 0;
+border: 1px ridge;
+height: 180px;
+}
+
+.badge-pill{
+    background-color: #dd1166;
+}
+
+h2{
+    font-size: 22px;
+    padding: 15px 5px 5px 5px;
+}
+hr {
+    background-color: #dd1166;
+}
+.formulario {
+    background-color: #dd1166;
+}
+
+h3, h4{
+    font-size: 18px;
+}
+.cart-card{
+    align-items: center;
+    display: flex;
+}
+.cart-card img{
+    max-height: 7em;
+}
+.qty-btn{
+    width: 3em;
+}
+
+.qty-btn-group{
+    width: 8em;
+    margin: 2px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn-primary {
+    background-color: #d61c6c;
+    border: none;
+}
+.btn.btn-primary:focus,
+.btn.btn-primary:active,
+.btn.btn-primary:hover {
+    background-color:hsl(334, 81%, 24%) !important;
+    border: none;
+}
+.bnt:hover{
+    background-color:hsl(334, 81%, 24%) !important;
+    border: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.final-purchase{
+    margin-bottom: 2px;
+    padding: 5px 5px 5px 5px;
+    border-top: 1px ridge;
+    border-top-color: #d61c6c;
+}
+#finalize-purchase{
+    height: 80px;
+}
+
+#change-currency {
+    height: fit-content;
+    width: fit-content;
+    background-color: #d61c6c;
+
+}
+
+.subtitulos {
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.needs-validation {
+    margin-left: 12px;
+}
+
+#shipping-add {
+    margin-left:12px;
+}

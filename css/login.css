@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+}
+@keyframes desliz{
+    0%{
+        margin-top: 150%;
+    }
+    60%{
+        margin-top: -5%;
+    }
+    100%{
+        margin-top: 0%;
+    
+    }
+}
+
+body {
+	background: #d61c6c;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+h1 {
+	font-weight: bold;
+    margin: 0;
+    font-size: 28px;
+  
+}
+
+form {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+    text-align: center;
+    animation: desliz 1.5s;
+    
+}
+
+input {
+	background-color: #eee;
+	padding: 12px 15px;
+	margin: 1px 0;
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 24px;
+}
+
+input:hover {
+    width: 120%;
+    border: 2px solid #d61c6c;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+    min-height: 480px;
+    background-image: url("../img/login.png");
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position-x: right;
+    background-position-y: 150px;
+}
+
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.btn-primary {
+    background-color: #d61c6c;
+    border-color: #d61c6c;
+}
+<<<<<<< Updated upstream
+.btn.btn-primary:focus,
+.btn.btn-primary:active,
+.btn.btn-primary:hover {
+   background-color: hsl(334, 81%, 24%); 
+=======
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 4000%;
+    }
+
+}
+.btn-primary:hover {
+    animation: animate 4637467s;
+   background:linear-gradient( 90deg,  hsl(334, 97%, 64%), #d61c6c, white);
+>>>>>>> Stashed changes
+border-color: white;
+}
+/* Google Button */
+
+.abcRioButtonBlue {
+    background-color: #d61c6c !important;
+}
+
+.abcRioButtonBlue:hover {
+    background-color:hsl(334, 81%, 24%) !important;
+    border: none;
+    
+}
+
+.abcRioButtonContents {
+    font-family: "Montserrat";   
+    line-height: 40px !important;
+    color: #f5f5f5 !important;
+
+}
+
+.abcRioButton {
+    border-radius: 20px !important;
+    width: 200px !important;
+    height: 42px !important;
+    background-color: #d61c6c;
+
+}
+
+.abcRioButton:hover {
+    box-shadow: none;
+}
+
+.abcRioButtonBlue .abcRioButtonIcon {
+    border-radius: 50% !important;
+}
+
+.abcRioButtonIcon {
+    margin-top: 3px !important;
+    margin-left: 3px !important;
+}

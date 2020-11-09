@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+<!--fontawesome-->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!--bootstrap-->
+<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--logout google-->
+<meta name="google-signin-client_id" content="507664152138-dju1jomabe3nbcaon4oafdlogtuti11f.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!--css-->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/cart.css" rel="stylesheet">
+</head>
+<body>
+ <!--barra de arriba-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-md-inline-block" href="index.html">Inicio</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2  d-md-inline-block" href="categories.html">Categorías</a>
+  </li>
+  <li class="nav-item col-4 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <p class="nav-link py-2 d-none d-md-inline-block"  style="color: white; font-weight: bold;">Bienvenido/a</p>
+  </li>
+<!--menú desplegable bootstrap-->
+<li class="nav-item dropdown">
+<button style="background-color: #d61c6d;" class="nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span style="color: white; font-weight: bold;" id="user"></span>
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: #d61c6d;">
+<a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart"></i> Mi carrito <badge class="badge badge-secondary badge-pill" id="cantproducto"></badge></a>
+<a class="dropdown-item" href="my-profile.html"><i class="fas fa-address-card"></i> Mi perfil</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" onclick="signOut();"><i class="fas fa-door-open"></i> Salir</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+      <div class="text-center p-4">
+        <h2 id="products-title">Mi Carrito</h2>
+        <p class="lead">Verás aquí todos los productos añadidos a tu carrito.</p>
+      </div>
+      <div class="container">
+         <div id="carrito-bienvenida" class="row">
+      <div class="col-12">
+        <h1 class="mt-0">Tienes <span id="total-items"></span> productos en tu
+          carrito</h1>
+        <h2 class="mt-1">Puedes finalizar tu compra cuando lo desees.</h2>
+      </div>
+    </div>
+        <div class="row">
+          <div id="productos-carrito" class="col-8">
+             </div>
+          <div class="col-4 final-purchase">
+            <div class="d-flex justify-content-around align-items-center">
+              <h2 class="my-1"><strong>Sub-total: </strong><span id="subtotal-currency">UYU </span><span id="subtotal-cost"></span></h2>
+              <button id="change-currency" type="button" class="btn btn-sm btn-secondary">USD</button>
+            </div>
+            <hr>
+            <form>
+              <div class="justify-content-center">
+                <div class="form-group">
+                  <label for="shipping-type" class="d-inline text-center subtitulos">Tipo de envío:</label>
+                  <div class="align-items-center">
+                    <p><input onclick="showTotalCost()" id="standard-shipping" type="radio" name="shipping-type" checked value="0.05"> Standard (12 a 15 días) - Costo: 5%</p>
+                        <p><input onclick="showTotalCost()" id="express-shipping" type="radio" name="shipping-type" value="0.07"> Express (5-8 días) - Costo: 7%</p>
+                        <p><input onclick="showTotalCost()" id="premium-shipping" type="radio" name="shipping-type" value="0.15"> Premium (2-5 días) - Costo: 15%</p>
+                    
+                  </div>
+                  <div class="form-group justify-content-start my-1">
+    <!-- Opciones de envío -->
+    <hr>
+    <form class="needs-validation" novalidate>
+      <fieldset class="form-group needs-validation">
+        <br>
+        <label class="form-check-label justify-content-center needs-validation subtitulos">Dirección de entrega</label>
+        <br>
+        <div class="form-group row needs-validation px-2">  
+            <select class="form-control needs-validation" name="paises" id="shipping-city-country"></select>
+            <input type="text" class="form-control needs-validation" name="dpto" id="shipping-city-department" placeholder="Departamento">
+            <input type="text" class="form-control needs-validation" name="ciudad" id="shipping-city" placeholder="Ciudad">
+            <input id="shipping-add" type="text" name="address-input"class="form-control my-1" placeholder="Calle, número, esquina" required>
+        </div>
+      </form>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="justify-content-center">
+                <div class="form-group">
+                 <div class="d-flex justify-content-start">
+                    <h3 class="mt-0"><b>Costo de envío:</b> <span id="shipping-currency"></span><span id="shipping-cost"></span></h3>
+                  </div>
+                  <div class="justify-content-start my-2">
+                   <hr>
+<!-- Button trigger modal -->
+<div class="container">
+  <div class="row">
+      <div class="col-12 col-md-12">
+        <button id="select-payment" type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#paymentModal">SELECCIONAR PAGO  </button>
+        <div class=" d-flex justify-content-center">
+          
+          <h2 class="justify-content-center my-4"><strong>Total: </strong><span id="total-currency">UYU </span><span id="total-amount"></span></h2>
+        </div>
+        
+        <div class="d-flex justify-content-center">
+          <button id="finalize-purchase" type="submit" class="btn btn-primary col">FINALIZAR COMPRA</button>
+        </div>
+    
+      </div>
+  </div>
+</div>
+<!--modal pago-->
+                  <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="paymentModalLabel">Selecciona un método de pago:</h5>
+                        <button onclick="resetPaymentModal()" type="button" class="close" data-dismiss="modal"
+                          aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-group">
+                          <div class="card">
+                            <div class="card-body">
+      
+                              <div style="border-bottom: 1px ridge;">
+                                <label class="radio-inline">
+                                  <!--tarjeta de crédito-->
+                                  <input class="radio-inline" id="credit-radio" type="radio" name="payment-method" value="t/crédito"">
+                                  <p>Tarjeta de Crédito</p></label>
+                              </div>
+                              <div class="row" id="credit-data" aria-disabled="true">
+                                <div class="col-2">
+                                  <label for="card-num"><small>Nro.</small></label>
+                                </div>
+                                <div class="col-10">
+                                  <input id="card-num" class="form-control" type="text" placeholder="**** **** **** ****"
+                                    name="credit-number">
+                                </div>
+                                <div class="col-2 my-2">
+                                  <label for="vto-card"><small>Vto.</small></label>
+                                </div>
+                                <div class="col-4 my-2">
+                                  <input id="vto-card" class="form-control" type="text" class="" placeholder="MM/YYYY"
+                                    name="expiration-date">
+                                </div>
+                                <div class="col-2 my-2">
+                                  <label for="cvv-card"><small>CVC/CVV</small></label>
+                                </div>
+                                <div class="col-4 my-2">
+                                  <input id="cvv-card" class="form-control" type="text" placeholder="***" name="security-code">
+                                </div>
+                              </div>
+      
+                            </div>
+                          </div>
+                          <!--cuenta bancaria-->
+                          <div class="card">
+                            <div class="card-body">
+                              <div style="border-bottom: 1px ridge;">
+                                <label class="radio-inline">
+                                  <input id="account-radio" type="radio" name="payment-method" value="t/bancaria">
+                                  <p>Transferencia Bancaria</p>
+                                </label>
+                              </div>
+                              <div class="row" id="account-data">
+                                <div class="col-2 mb-2">
+                                  <label><small>Banco</small></label>
+                                </div>
+                                <div class="col-10 mb-2">
+                                  <select id="banco" class="form-control bg-light" name="bank">
+                                    <option>BROU</option>
+                                    <option>Santander</option>
+                                    <option>Itaú</option>
+                                    <option>Scotiabank</option>
+                                    <option>BBVA</option>
+                                    <option>HSBC</option>
+                                  </select>
+                                </div>
+      
+                                <div class="col-2 mb-2">
+                                  <label for="account-n"><small>Cuenta:</small></label>
+                                </div>
+                                <div class="col-10 mb-2">
+                                  <input id="account-n" class="form-control" type="text" name="account-number"
+                                    placeholder="Número de cuenta">
+                                </div>
+                                <div class="col-2">
+                                  <label for="sucursal-bank"><small>Sucursal:</small></label>
+                                </div>
+                                <div class="col-5">
+                                  <input id="sucursal-bank" class="form-control" type="text" name="sucursal-number" placeholder="Sucursal">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+      
+                          <div class="modal-footer">
+                            <button onclick="resetPaymentModal()" type="button" class="btn btn-secondary"
+                              data-dismiss="modal">Cancelar</button>
+                            <button onclick="validatePayment(event)" id="submit-payment"
+                              class="btn btn-primary">Aceptar</button>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                  
+            </form>
+          </div>
+        </div>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+<!--javascript-->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/loginGoogle.js"></script>
+  <!--sweetalert-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!--javascript logout google-->
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <!--variable del usuario para el local storage-->
+  <script>     
+    var usuario = localStorage.getItem('user');
+      document.getElementById('user').innerHTML = usuario;
+      </script>
+</body>
+</html>

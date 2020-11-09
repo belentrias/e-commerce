@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+<!--fontawesome-->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!--bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<!--logout google-->
+<meta name="google-signin-client_id" content="507664152138-dju1jomabe3nbcaon4oafdlogtuti11f.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+<!--css-->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/my-profile.css" rel="stylesheet">
+</head>
+<body>
+ <!--barra de arriba-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-md-inline-block" href="index.html">Inicio</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2  d-md-inline-block" href="categories.html">Categorías</a>
+  </li>
+  <li class="nav-item col-4 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <p class="nav-link py-2 d-none d-md-inline-block"  style="color: white; font-weight: bold;">Bienvenido/a</p>
+  </li>
+<!--menú desplegable bootstrap-->
+<li class="nav-item dropdown">
+<button style="background-color: #d61c6d;" class="nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span style="color: white; font-weight: bold;" id="user"></span>
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: #d61c6d;">
+<a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart"></i> Mi carrito <badge class="badge badge-secondary badge-pill" id="cantproducto"></badge></a>
+<a class="dropdown-item" href="my-profile.html"><i class="fas fa-address-card"></i> Mi perfil</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" onclick="signOut();"><i class="fas fa-door-open"></i> Salir</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<main role="main" class="pb-5">
+  <div class="text-center p-4">
+    <h2>Perfil</h2>
+    <p class="lead">Datos de  usuario</p>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-2">
+        <img id="img" src="https://es.calcuworld.com/wp-content/uploads/sites/2/2019/09/generador-de-nombres-de-usuario.png" alt="fotoperfil" class="img-fluid avatar file-upload img-thumbnail rounded mx-auto d-block">
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+  <!--<div class="col-2">
+        <button type="button" style="background-color: #d61c6d;" class="btn btn-dark"onclick="cambiarFoto()">Cambiar foto usuario desde URL</button>
+      </div> -->
+      <div class="col-2">
+        <input type="file" class="text-center center-block file-upload bnt">
+      </div>
+    </div>
+  <br>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputName">Nombre</label>
+              <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputLastName">Apellido</label>
+              <input type="text" class="form-control" id="inputLastName" placeholder="Apellido">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-10">
+              <label for="inputEmail">Email</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">@</div>
+                </div>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputAge">Edad</label>
+              <input type="number" class="form-control" id="inputAge" placeholder="41">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputTelephone">Teléfono</label>
+              <input type="text" class="form-control" id="inputTelephone" placeholder="Telefono">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputCellphone">Celular</label>
+              <input type="text" class="form-control" id="inputCellphone" placeholder="Celular">
+            </div>
+          </div>
+          </div>
+          <hr>
+          <div class="container">
+          <div class="row justify-content-md-center justify-content-between">
+            <div class= "col-2">
+          <button type="button" class="btn btn-primary" onclick="guardarDatos()">Guardar</button>
+          </div>
+          <div class= "col-2">
+          <button type="button" class="btn btn-danger" onclick="borrarCampos()">Borrar</button>
+          </div>
+          </div>
+          </div>
+        </form>
+        <hr>       
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <p><span class="font-weight-bold mr-2">Nombre:</span><a href="" id="name"></a></p>
+    </div>
+</main>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div class="alert fade alert-success" role="alert" id="alertResult">
+    <span id="resultSpan"></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/loginGoogle.js"></script>
+  <script src="js/my-profile.js"></script>
+    <!--sweetalert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!--javascript logout google-->
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <!--variable del usuario para el local storage-->
+  <script>     
+    var usuario = localStorage.getItem('user');
+      document.getElementById('user').innerHTML = usuario;
+      </script>
+</body>
+</html>

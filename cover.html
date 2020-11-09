@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
+<!-- bootstrap-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<!--fontawesome-->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+<!--javascript-->
+    <script src="/js/init.js" type="text/javascript"></script>
+<!--css-->
+    <link href="css/styles.css" rel="stylesheet">
+<!--logout google-->
+<meta name="google-signin-client_id" content="507664152138-dju1jomabe3nbcaon4oafdlogtuti11f.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+<!--barra de arriba-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-md-inline-block" href="index.html">Inicio</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2  d-md-inline-block" href="categories.html">Categorías</a>
+  </li>
+  <li class="nav-item col-4 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <p class="nav-link py-2 d-none d-md-inline-block"  style="color: white; font-weight: bold;">Bienvenido/a</p>
+  </li>
+<!--menú desplegable bootstrap-->
+<li class="nav-item dropdown">
+<button style="background-color: #d61c6d;" class="nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span style="color: white; font-weight: bold;" id="user"></span>
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: #d61c6d;">
+<a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart"></i> Mi carrito <badge class="badge badge-secondary badge-pill" id="cantproducto"></badge></a>
+<a class="dropdown-item" href="my-profile.html"><i class="fas fa-address-card"></i> Mi perfil</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" onclick="signOut();"><i class="fas fa-door-open"></i> Salir</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+    <main role="main">
+<!--header e-commerce-->
+      <section class="jumbotron text-center">
+        <div class="m-5"></div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+<!--categoría autos-->
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="img/cat1.jpg">
+                <h3 class="m-3">Autos (122)</h3>
+                <div class="card-body">
+                  <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+                </div>
+              </a>
+            </div>
+<!--categoría muebles-->
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
+                  <h3 class="m-3">Juguetes (354)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
+                  </div>
+                </a>
+            </div>
+<!--categoría juguetes-->
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
+                  <h3 class="m-3">Muebles (157)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
+                  </div>
+                </a>
+            </div>
+<!--categoría herramientas-->
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
+                  <h3 class="m-3">Herramientas (452)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
+                  </div>
+                </a>
+            </div>
+<!--categoría computadoras-->
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
+                  <h3 class="m-3">Computadoras (724)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
+                  </div>
+                </a>
+            </div>
+<!--categoría vestimenta-->
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
+                  <h3 class="m-3">Vestimenta (841)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>
+                  </div>
+                </a>
+            </div>
+          </div>
+<!--lista categorías-->
+          <div class="row">
+              <a type="button" class="btn btn-light btn-lg btn-block" href="categories.html">Ver todas</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right"><a href="#">Volver arriba</a></p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+<!--javascript-->
+     <script src="js/jquery-3.4.1.min.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+     <script src="js/init.js"></script>
+     <script src="js/categories.js"></script>
+     <script src="js/login.js"></script>
+     <script src="js/loginGoogle.js"></script>
+     <script src="https://kit.fontawesome.com/62d1a3e9cc.js" crossorigin="anonymous"></script>
+<!--javascript logout google-->
+     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+<!--variable del usuario para el local storage-->
+     <script>     
+       var usuario = localStorage.getItem('user');
+         document.getElementById('user').innerHTML = usuario;
+         </script>
+   </body>
+ </html>

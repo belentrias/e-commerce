@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+    <!-- bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!--css-->
+  <link href="css/styles.css" rel="stylesheet">
+  <!--javascript-->
+  <script src="/js/init.js" type="text/javascript"></script>
+<!--logout google-->
+<meta name="google-signin-client_id" content="507664152138-dju1jomabe3nbcaon4oafdlogtuti11f.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+<!--barra de arriba-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-md-inline-block" href="index.html">Inicio</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2  d-md-inline-block" href="categories.html">Categorías</a>
+  </li>
+  <li class="nav-item col-4 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <a class="nav-link py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+  </li>
+  <li class="nav-item col-3 active">
+  <p class="nav-link py-2 d-none d-md-inline-block"  style="color: white; font-weight: bold;">Bienvenido/a</p>
+  </li>
+<!--menú desplegable bootstrap-->
+<li class="nav-item dropdown">
+<button style="background-color: #d61c6d;" class="nav-link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span style="color: white; font-weight: bold;" id="user"></span>
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: #d61c6d;">
+<a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart"></i> Mi carrito <badge class="badge badge-secondary badge-pill" id="cantproducto"></badge></a>
+<a class="dropdown-item" href="my-profile.html"><i class="fas fa-address-card"></i> Mi perfil</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" onclick="signOut();"><i class="fas fa-door-open"></i> Salir</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción de la categoría</h2>
+        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
+          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+      </div>
+      <h3 id="categoryName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="categoryDescription"></p>
+        </dd>
+
+        <dt>Cantidad de productos en la categoría</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Criterio para incluir productos en esta categoría</dt>
+        <dd>
+          <p id="productCriteria"></p>
+        </dd>
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!--javascript-->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/category-info.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/loginGoogle.js"></script>
+  <script>     
+    var usuario = localStorage.getItem('user');
+      document.getElementById('user').innerHTML = usuario;
+      </script>
+</body>
+
+</html>
